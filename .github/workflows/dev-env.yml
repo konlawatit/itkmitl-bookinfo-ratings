@@ -54,5 +54,5 @@ jobs:
     - name: curl
       uses: enflo/curl-action@master
       with:
-        curl: http://itkmitl.bookinfo.dev.opsta.net/student[X]/ratings/health | grep "Ratings is working"
+        curl: http://itkmitl.bookinfo.dev.opsta.net/student15/ratings/health | grep "Ratings is working"
 
