@@ -1,0 +1,22 @@
+ratings:
+  namespace: student15-bookinfo-dev
+  image: ghcr.io/konlawatit/bookinfo-ratings
+  tag: dev
+  replicas: 1
+  imagePullSecrets: registry-bookinfo
+  port: 8080
+ingress:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+  host: itkmitl.bookinfo.dev.opsta.net
+  path: "/student15/ratings(/|$)(.*)"
+  serviceType: ClusterIP
+extraEnv:
+  SERVICE_VERSION: v2
+  MONGO_DB_URL: mongodb://bookinfo-dev-ratings-mongodb:27017/ratings
+  MONGO_DB_USERNAME: ratings
+  COMMIT_SHA: CHANGME
+extraEnvSecret:
+  MONGO_DB_PASSWORD:
+    bookinfo-dev-ratings-mongodb-secret: mongodb-password
