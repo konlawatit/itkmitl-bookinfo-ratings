@@ -51,11 +51,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: curl
-        uses: garygrossgarten/github-action-ssh@release
-        with:
-          command: curl http://itkmitl.bookinfo.dev.opsta.net/student15/ratings/health | grep "Ratings is working"
-          host: ${{ secrets.HOST }}
-          username: garygrossgarten
-          passphrase: ${{ secrets.PASSPHRASE }}
-          privateKey: ${{ secrets.PRIVATE_KEY}}
+        run: curl http://itkmitl.bookinfo.dev.opsta.net/student[X]/ratings/health | grep "Ratings is working"
+
 
