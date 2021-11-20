@@ -13,7 +13,7 @@ node ratings.js 8080
 ## How to run with Docker
 
 ```bash
-# Build Docker Image for rating service
+# Build Docker Image for ratings service
 docker build -t ratings .
 
 # Run MongoDB with initial data in database
